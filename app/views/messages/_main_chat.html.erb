@@ -1,16 +1,12 @@
 <div class="chat-header">
-  <div class="chat-header-title">hogefuga</div>
+  <div class="chat-header-title">
+    <%= @room.name %>
+  </div>
   <div class="chat-end-btn"><a href="#">チャットを終了する</a></div>
 </div>
 
 <div class="messages">
-  <div class="message">
-    <div class="message-title">
-      <div class="message-name">Tom</div>
-      <div class="message-date">2020/3/31(Wed) 12:43:30</div>
-    </div>
-    <div class="message-text">おはよう</div>
-  </div>
+    <%= render partial: 'message', collection: @messages %>
 </div>
 
   <%= form_with model: [@room, @message], html: {class: "form"}, local: true do |f|%>
